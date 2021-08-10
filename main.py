@@ -1,15 +1,18 @@
-import struct
+import numpy as np
 
-bytes_to_write = [128, 0, 0, 5]
+from array import array
 
+with open('file', 'wb') as output_file:
+    float_array = array('f', [3.14, 2.7, -1.0, 1.1, 128, 15, 11])
+    float_array.tofile(output_file)
+    output_file.close()
 
-with open("filename.txt", "wb") as file:
-    byte_array = bytearray(bytes_to_write)
-    file.write(byte_array)
+with open('file', 'rb') as input_file:
+    a = input_file.read(4)
+    float_array = array('f')
+    float_array.fromstring(input_file.read())
+    print(float_array)
 
-with open('filename.txt', 'rb') as file:
-    liczba = 5
-    red = file.read()
-    result = struct.unpack('i', red)
-    for item in file:
-        print(item)
+    b = np.array(float_array)
+
+    stp_dbg = 0

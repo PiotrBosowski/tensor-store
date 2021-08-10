@@ -1,0 +1,4 @@
+pierwsze 4 bajty definiują typ danych, drugie 4 bajty przechowują liczbę wymiarów danych, kolejne pozycje to długości dla każdego wymiaru, a potem już same dane
+czyli 2-wymiarową macierz floatów o wymiarach 3x2 zapiszemy jak powyżej na screenie
+ma to tę zaletę, że jest niezależne od numpy, nie trzeba korzystać z zewnętrznych bibliotek i jest banalnie proste (+ wbrew pozorom fajnie rozszerzalne o nowe funkcjonalności)
+także jeśli dasz mi czas do poniedziałku to w poniedziałek dupnę kawałek kodu do zapisywania/wczytywania takiego czegoś w C++/pythonie i będziemy mieli zgrabny format do przenoszenia danych pomiędzy C++ a pythonem (i innymi jeśli będzie trzeba)
